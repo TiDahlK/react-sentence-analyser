@@ -3,15 +3,8 @@ import "./RobotThinking.css";
 const CuteRobotThinking = ({ renderBubbles }) => {
   return (
     <div
-      style={{
-        transform: "scale(0.5)",
-        transformOrigin: "top left",
-        maxWidth: "200px",
-        position: "absolute",
-        top: "-143%",
-        left: "70%",
-        zIndex: 0,
-      }}
+      id="KimTheThinkingRobot"
+      className="robotWrapper"
     >
       <svg
         width="200"

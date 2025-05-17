@@ -1,0 +1,67 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-primary: #1e90ff; /* Soft blue (Dodger Blue) */
+  --color-primary-hover: #1c7ed6; /* Slightly deeper blue for hover */
+
+  --color-bg: #ffffff; /* Clean white background */
+  --color-surface: #f8f9fa; /* Soft light-gray card/panel background */
+
+  --color-text: #222222; /* Main readable dark gray */
+  --color-border: #dddddd; /* Light neutral border */
+  --color-hover: #f0f0f0; /* Soft general hover background */
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--color-primary);
+  transition: all 0.5s linear;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+button:hover {
+  border-color: var(--color-primary-hover);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

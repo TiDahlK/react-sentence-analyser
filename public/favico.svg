@@ -1,0 +1,33 @@
+<!-- cute-robot-favicon.svg -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="64"
+  height="64"
+  viewBox="0 0 200 200"
+>
+  <g>
+    <!-- Antenna -->
+    <line x1="100" y1="40" x2="100" y2="60" stroke="black" stroke-width="2" />
+    <circle cx="100" cy="35" r="5" fill="black" />
+
+    <!-- Head -->
+    <rect
+      x="60"
+      y="60"
+      width="80"
+      height="80"
+      rx="20"
+      fill="white"
+      stroke="black"
+      stroke-width="2"
+    />
+
+    <!-- Eyes -->
+    <circle cx="85" cy="90" r="7" fill="black" />
+    <circle cx="115" cy="90" r="7" fill="black" />
+
+    <!-- Blush (subtle) -->
+    <circle cx="75" cy="100" r="3" fill="black" opacity="0.1" />
+    <circle cx="125" cy="100" r="3" fill="black" opacity="0.1" />
+  </g>
+</svg>

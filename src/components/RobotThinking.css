@@ -41,3 +41,13 @@
     transform: scale(1);
   }
 }
+
+.robotWrapper {
+  transform: scale(0.5);
+  transform-origin: top left;
+  max-width: 200px;
+  position: absolute;
+  top: -143%;
+  left: 70%;
+  z-index: 0;
+}

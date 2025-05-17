@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import axios from "axios";
-import CuteRobotThinking from "./components/RobotThinking";
-import Card from "./components/card";
+import CuteRobotThinking from "./components/RobotThinking.jsx";
+import Card from "./components/Card.jsx";
+
 const setTheme = (theme) => {
   const root = document.documentElement;
   if (theme) {

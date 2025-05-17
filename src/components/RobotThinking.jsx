@@ -4,7 +4,7 @@ const CuteRobotThinking = ({ renderBubbles }) => {
   return (
     <div
       id="KimTheThinkingRobot"
-      className="robotWrapper"
+      className="robot-wrapper"
     >
       <svg
         width="200"

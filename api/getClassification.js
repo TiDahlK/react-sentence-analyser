@@ -21,7 +21,7 @@ export default async function handler(req, res) {
           properties: {
             undertone: {
               type: "string",
-              description: "Your classification",
+              description: "Your classification, Start with Uppercase letter",
             },
             explanation: {
               type: "string",
@@ -32,56 +32,53 @@ export default async function handler(req, res) {
               type: "string",
               description: "Fitting Emoji",
             },
-            theme: {
-              type: "object",
-              properties: {
-                primaryColor: {
-                  type: "string",
-                  description:
-                    "HexColor code fitting of the classification to be used as primary color",
-                },
-                primaryColorHover: {
-                  type: "string",
-                  description:
-                    "HexColor code fitting of the classification to be used as primary color",
-                },
-                surfaceColor: {
-                  type: "string",
-                  description:
-                    "HexColor code fitting of the classification to be used as surface color",
-                },
-                borderColor: {
-                  type: "string",
-                  description:
-                    "HexColor code fitting of the classification to be used as border color",
-                },
-                backgroundColor: {
-                  type: "string",
-                  description:
-                    "HexColor code fitting of the classification to be used as background color",
-                },
-                textColor: {
-                  type: "string",
-                  description:
-                    "HexColor code fitting of the classification to be used as text color, give clear contrast against backgroundColor",
-                },
-              },
+            primaryColor: {
+              type: "string",
+              description:
+                "HexColor code fitting of the classification to be used as primary color",
+            },
+            primaryColorHover: {
+              type: "string",
+              description:
+                "HexColor code fitting of the classification to be used as primary color",
+            },
+            surfaceColor: {
+              type: "string",
+              description:
+                "HexColor code fitting of the classification to be used as surface color",
+            },
+            borderColor: {
+              type: "string",
+              description:
+                "HexColor code fitting of the classification to be used as border color",
+            },
+            backgroundColor: {
+              type: "string",
+              description:
+                "HexColor code fitting of the classification to be used as background color",
+            },
+            textColor: {
+              type: "string",
+              description:
+                "HexColor code fitting of the classification to be used as text color, give clear contrast against backgroundColor",
             },
           },
-          required: ["emoji", "undertone", "explanation", "theme"],
+          required: ["emoji", "undertone", "explanation", "textColor", "backgroundColor", "borderColor", "surfaceColor", "primaryColorHover", "primaryColor"],
           additionalProperties: false,
         },
       },
     ];
 
     const response = await client.responses.create({
-      model: "gpt-4.1",
+      model: "gpt-4.1-nano",
       input: [{ role: "user", content: req.query.message }],
       tools,
       tool_choice: { type: "function", name: "get_sentence_classification" },
     });
 
-    res.status(200).json(JSON.parse(response.output[0].arguments));
+    const {emoji, undertone, explanation, ...theme } = JSON.parse(response.output[0].arguments); 
+
+    res.status(200).json({emoji, undertone, explanation, theme});
   } catch (error) {
     res
       .status(500)

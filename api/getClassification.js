@@ -83,7 +83,6 @@ export default async function handler(req, res) {
 
     res.status(200).json(JSON.parse(response.output[0].arguments));
   } catch (error) {
-    console.log(error);
     res
       .status(500)
       .json({ error: "Internal Server Error", details: error.message });
